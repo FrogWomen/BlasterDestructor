@@ -13,7 +13,7 @@ public class MotherShip
 
     public void paintSelf(Graphics2D g2)
     {
-g2.translate(-175, -160);
+g2.translate(-155, -155);
         g2.rotate(Math.toRadians(froggyCourse));
         g2.drawImage(froggyImage, 0, 0, null);
         
