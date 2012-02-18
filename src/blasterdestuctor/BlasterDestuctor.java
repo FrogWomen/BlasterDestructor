@@ -3,11 +3,7 @@ package blasterdestuctor;
 /**********************************************
  * copyright 2012 Jennifer Grace DeSantis
  **********************************************/
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,7 +22,7 @@ public class BlasterDestuctor extends JComponent implements ActionListener, KeyL
     int height = Toolkit.getDefaultToolkit().getScreenSize().height;
     Timer tickity;
     MotherShip enterprise;
-    URL froggyAddress = getClass().getResource("TreeFrogMotherShip.jpg");
+    URL froggyAddress = getClass().getResource("TreeFrogMotherShip.png");
     Image froggy;
     Asteroid fly;
     private int froggyCourse;
@@ -72,7 +68,7 @@ public class BlasterDestuctor extends JComponent implements ActionListener, KeyL
     {
         Graphics2D g2 = (Graphics2D) g;
         enterprise.paintSelf(g2);
-        fly.paintSelf(g2);
+       fly.paintSelf(g2);
     }
     
     @Override
@@ -85,7 +81,7 @@ public class BlasterDestuctor extends JComponent implements ActionListener, KeyL
     @Override
     public void keyPressed(KeyEvent ke)
     {
-        if (ke.getKeyCode() == 39)
+        if (ke.getKeyCode() == 39)//right
         {
             froggyCourse++;
             if (froggyCourse > 359)
@@ -94,7 +90,7 @@ public class BlasterDestuctor extends JComponent implements ActionListener, KeyL
             }
             enterprise.setFroggyCourse(froggyCourse);            
         }        
-        if (ke.getKeyCode() == 37)
+        if (ke.getKeyCode() == 37)//left
         {
             froggyCourse--;
             if (froggyCourse < 0)
@@ -103,12 +99,12 @@ public class BlasterDestuctor extends JComponent implements ActionListener, KeyL
             }
             enterprise.setFroggyCourse(froggyCourse);
         }
-        if (ke.getKeyCode() == 38)
+        if (ke.getKeyCode() == 38)//up
         {
             froggySpeed++;
             enterprise.setFroggySpeed(froggySpeed);
         }
-        if (ke.getKeyCode() == 40)
+        if (ke.getKeyCode() == 40)//down
         {
             froggySpeed--;
             enterprise.setFroggySpeed(froggySpeed);
